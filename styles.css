@@ -1,0 +1,219 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  color: #333;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  font-family: 'Baloo 2', cursive;
+}
+
+/* Header */
+header {
+  position: relative;
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #ffcc80;
+  overflow: hidden;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin: 0;
+  animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+#confetti-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Sections */
+section {
+  padding: 2rem 1rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #e91e63;
+}
+
+.countdown {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem;
+  background: #c8e6c9;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.about-holi {
+  background: #ffe0b2;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Form */
+.message-form {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #f8bbd0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.message-form input,
+.message-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.message-form button {
+  padding: 0.7rem 1.2rem;
+  background: #e91e63;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.message-form button:hover {
+  background: #d81b60;
+}
+
+.messages-list p {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 0.5rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Social Media */
+.social-links {
+  text-align: center;
+  margin: 2rem;
+}
+
+.social-links h2 {
+  margin-bottom: 1.5rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 28px;
+  transition: all 0.3s ease;
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.fa-instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.fa-whatsapp {
+  color: #25D366;
+}
+
+.fa-snapchat {
+  color: #FFFC00;
+}
+
+.social-links a:hover {
+  transform: scale(1.2) rotate(360deg);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.social-links a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover::after {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gallery img {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .social-icons {
+    gap: 15px;
+  }
+  
+  .social-links a {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holi Celebrations</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+   <!-- Open Graph Meta Tags for Better Sharing -->
+  <meta property="og:title" content="Holi Celebrations">
+  <meta property="og:description" content="Join the virtual Holi celebration!">
+  <meta property="og:image" content="URL_TO_YOUR_LOGO_IMAGE">
+  <meta property="og:url" content="YOUR_WEBSITE_URL">
+</head>
+<body>
+  <header>
+    <canvas id="confetti-canvas"></canvas>
+    <h1>Wishing You a Joyous and Colorful Holi!</h1>
+  </header>
+
+  <section class="countdown">
+    <div id="timer">Countdown to Holi: 00d 00h 00m 00s</div>
+  </section>
+
+  <section class="about-holi">
+    <h2 class="section-title">The Significance of Holi</h2>
+    <p>
+      Holi, the festival of colors, celebrates the victory of good over evil and marks the arrival of spring.
+      It is a time for family, friends, and communities to come together in joyous revelry; sharing love, laughter,
+      and vibrant memories. The playful throwing of colors is symbolic of shedding the past and embracing a new beginning.
+    </p>
+  </section>
+
+  <section class="gallery">
+    <h2 class="section-title" style="width: 100%;">Gallery of Colors</h2>
+    <img src="images/gulalpowders.jpg" alt="Gulal Powders" />
+    <img src="images/61V-JCpIVPL.jpg" alt="Water Balloons" />
+    <img src="images/118758236.jpg" alt="Festive Gatherings" />
+    <img src="images/GTTXQVY5OJAGZL6ICZ3PGNO4MM.jpg" alt="Holi Celebration" />
+  </section>
+
+  <section class="message-form">
+    <h2 class="section-title">Send Your Wishes</h2>
+    <form id="wishForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Submit Wish</button>
+    </form>
+    <div class="messages-list" id="messagesList"></div>
+  </section>
+
+  <!-- Updated Social Media Sharing Section -->
+  <section class="social-links">
+    <h2 class="section-title">Share the Joy</h2>
+    <div class="social-icons">
+      <a href="#" class="share-link" data-platform="instagram" aria-label="Share on Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="#" class="share-link" data-platform="whatsapp" aria-label="Share on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="#" class="share-link" data-platform="snapchat" aria-label="Share on Snapchat">
+        <i class="fab fa-snapchat-ghost"></i>
+      </a>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
