@@ -116,10 +116,11 @@ section {
   border: 2px solid #e91e63;
   border-radius: 8px;
   font-size: 1rem;
+  box-sizing: border-box; /* Added for proper width calculation */
 }
 
 .message-form textarea {
-  resize: vertical;
+  resize: none;
   min-height: 120px;
   line-height: 1.5;
 }
