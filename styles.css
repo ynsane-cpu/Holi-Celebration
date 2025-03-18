@@ -91,6 +91,9 @@ section {
   transform: scale(1.05);
 }
 
+/* Form */
+/* Previous styles remain the same until the form section */
+
 /* Message Form */
 .message-form {
   max-width: 800px;
