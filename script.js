@@ -91,20 +91,55 @@ function updateTimer() {
 setInterval(updateTimer, 1000);
 
 // Message Form
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAp8jPbZMrUU1M_aZ4XHTRS_MT_y6uYcXo",
+  authDomain: "happy-holi-f0cba.firebaseapp.com",
+  projectId: "happy-holi-f0cba",
+  storageBucket: "happy-holi-f0cba.firebasestorage.app",
+  messagingSenderId: "173972648321",
+  appId: "1:173972648321:web:4ea8354423f3559ba4f880",
+  measurementId: "G-Z9RKW619MN"
+};
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// Message Form Handling
 const form = document.getElementById("wishForm");
 const messagesList = document.getElementById("messagesList");
 
-form.addEventListener("submit", function(e) {
+// Load existing messages
+db.collection("messages").orderBy("timestamp", "desc").onSnapshot((snapshot) => {
+  messagesList.innerHTML = "";
+  snapshot.forEach((doc) => {
+    const message = doc.data();
+    addMessageToDOM(message.name, message.text);
+  });
+});
+
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const name = document.getElementById("name").value;
   const message = document.getElementById("message").value;
+
+  try {
+    await db.collection("messages").add({
+      name: name,
+      text: message,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    form.reset();
+  } catch (error) {
+    console.error("Error saving message:", error);
+    alert("Error sending message. Please try again.");
+  }
+});
+
+function addMessageToDOM(name, message) {
   const p = document.createElement("p");
   p.textContent = `${name}: ${message}`;
   messagesList.appendChild(p);
-  form.reset();
-});/**
- * 
- */
+}
 // Social Media Sharing
 document.querySelectorAll('.share-link').forEach(link => {
   link.addEventListener('click', function(e) {
